@@ -3,6 +3,7 @@
 
 <head>
     <title>Jolt Transform Demo</title>
+    <meta name="examples" th:content="@{/js/examples/}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -116,34 +117,9 @@
                         <label for="examples-original">Original Examples : Shiftr</label>
                     </div>
                     <div class="panel-body" id="examples-original">
-                        <!--
                         <ol>
-                            <li><a href="#" onclick="loadExample( 'inception' ); return false;">Inception</a></li>
-                            <li><a href="#" onclick="loadExample( 'bucketToPrefixSoup' ); return false;">Convert nested
-                                    data, to 'prefix soup'.</a></li>
-                            <li><a href="#" onclick="loadExample( 'prefixSoupToBuckets' ); return false;">Convert
-                                    'prefix soup', to nested data.</a></li>
-                            <li><a href="#" onclick="loadExample( 'listKeys' ); return false;">Grab LHS key values.</a>
-                            </li>
-                            <li><a href="#" onclick="loadExample( 'mapToList' ); return false;">Map to list.</a></li>
-                            <li><a href="#" onclick="loadExample( 'inputArrayToPrefix' ); return false;">List to
-                                    Map.</a></li>
-                            <li><a href="#" onclick="loadExample( 'hashDefault' ); return false;">On a match, apply a
-                                    String default.</a></li>
-                            <li><a href="#" onclick="loadExample( 'transposeSimple' ); return false;">Base case simple
-                                    Transpose.</a></li>
-                            <li><a href="#" onclick="loadExample( 'transposeComplex' ); return false;">Complex / nested
-                                    Transpose.</a></li>
-                            <li><a href="#" onclick="loadExample( 'json-ld-escaping' ); return false;">Escaping Shiftr
-                                    special chars.</a></li>
-                            <li><a href="#" onclick="loadExample( 'ritwickgupta' ); return false;">Transpose data in an
-                                    Array.</a></li>
-                            <li><a href="#" onclick="loadExample( 'andrewkcarter1' ); return false;">Bucket data from an
-                                    Array, based on a leaf level value.</a></li>
-                            <li><a href="#" onclick="loadExample( 'andrewkcarter2' ); return false;">Filter data from an
-                                    Array, based on a leaf level value.</a></li>
+                            <li th:each="example : ${examples}"><a href="#" th:name_field="${example.name}" onclick="loadExample( this.getAttribute('name_field') ); return false;"><span th:text="${example.title}"> Name </span></a></li>
                         </ol>
-                    -->
                     </div>
                 </div>
             </div> <!-- row 3 column 1 -->
@@ -152,7 +128,7 @@
 
                 <div id="examplesPanel-modify" class="panel panel-default">
                     <div class="panel-heading">
-                        <label for="examples-modify">Examples : Modify Beta</label>
+                        <label for="examples-modify">Examples : Reltio <-> DnB </label>
                     </div>
                     <div class="panel-body" id="examples-modify">
                         <!--
@@ -178,20 +154,12 @@
                         <label for="thanks">Thanks To</label>
                     </div>
                     <div class="panel-body" id="thanks">
-                        <p>&nbsp;<a href="https://cloud.google.com/appengine/">Google App Engine</a> for having a free
-                            tier. </p>
-                        <p>&nbsp;<a href="https://codemirror.net/">CodeMirror</a> for the cool text areas. </p>
-                        <p>&nbsp;<a href="http://jsbeautifier.org/">JS Beautifier</a> for the JavaScript reformatting.
-                        </p>
-                        <p>&nbsp;<a href="https://github.com/kaelzhang/node-comment-json">Comment Json</a> : Json parser
-                            that supports comments. </p>
-                        <p>&nbsp;<a href="http://browserify.org/">Browserify</a> : Converting node.js packages into
-                            browser usable js files. </p>
+                        <p>&nbsp;<a href="https://jolt-demo.appspot.com">JOLT demo site</a> for having an example.</p>
+                        <p>&nbsp;<a href="https://github.com/bazaarvoice/jolt/">JOLT</a> for the great tool. </p>
                     </div>
                 </div>
             </div> <!-- row 3 column 3 -->
         </div>
-
     </form>
 
     <!-- Load up the Core CodeMirror JavaScript and CSSs. -->
@@ -405,8 +373,7 @@
 
             // update browser address bar URL when someone clicks an example
             location.hash = exampleName;
-            // hardcoded path :(
-            var base = '/joltdemo/js/examples';
+            var base =  document.querySelector('meta[name="examples"]').content;
 
             $.ajax({
                 url: base + "/" + exampleName + "-input.json",
