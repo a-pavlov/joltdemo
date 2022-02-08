@@ -131,18 +131,9 @@
                         <label for="examples-modify">Examples : Reltio <-> DnB </label>
                     </div>
                     <div class="panel-body" id="examples-modify">
-                        <!--
                         <ol>
-                            <li><a href="#" onclick="loadExample( 'modify-listFunctions' ); return false;">List
-                                    Functions</a></li>
-                            <li><a href="#" onclick="loadExample( 'modify-mathFunctions' ); return false;">Math
-                                    Functions</a></li>
-                            <li><a href="#" onclick="loadExample( 'modify-typeConversion' ); return false;">Type
-                                    Conversion</a></li>
-                            <li><a href="#" onclick="loadExample( 'modify-stringFunctions' ); return false;">String
-                                    Concatenation</a></li>
+                            <li th:each="example_r : ${examples_r}"><a href="#" th:name_field="${example_r.name}" onclick="loadExample( this.getAttribute('name_field') ); return false;"><span th:text="${example_r.title}"> Name </span></a></li>
                         </ol>
-                    -->
                     </div>
                 </div>
             </div> <!-- row 3 column 2 -->

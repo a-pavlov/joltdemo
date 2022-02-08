@@ -84,6 +84,26 @@
       "title": "String Concatenation",
       "name": "modify-stringFunctions",
       "type": "native"
+    },
+    {
+      "title": "Filter+ nested addresses",
+      "name": "filter_plus_nested",
+      "type": "reltio"
+    },
+    {
+      "title": "Enrichment+ nested addresses",
+      "name": "enrichment_plus_nested",
+      "type": "reltio"
+    },
+    {
+      "title": "Batch+ nested addresses",
+      "name": "batch_plus_nested",
+      "type": "reltio"
+    },
+    {
+      "title": "Match+ nested addresses",
+      "name": "match_plus_nested",
+      "type": "reltio"
     }
   ]
 }

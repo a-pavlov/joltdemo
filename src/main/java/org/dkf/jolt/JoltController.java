@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class JoltController {
@@ -40,7 +41,8 @@ public class JoltController {
 	@GetMapping("/")
 	public String joltdemo(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		LOG.info("JOLT demo has been started");
-		model.addAttribute("examples", registeredExamples);
+		model.addAttribute("examples", registeredExamples.stream().filter(x -> "native".equals(x.type)).collect(Collectors.toList()));
+		model.addAttribute("examples_r", registeredExamples.stream().filter(x -> "reltio".equals(x.type)).collect(Collectors.toList()));
 		return "jolt_demo";
 	}
 
