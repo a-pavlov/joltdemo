@@ -86,23 +86,88 @@
       "type": "native"
     },
     {
-      "title": "Filter+ nested addresses",
+      "title": "Filter+: Address as nested attribute",
       "name": "filter_plus_nested",
       "type": "reltio"
     },
     {
-      "title": "Enrichment+ nested addresses",
+      "title": "Filter+: Address as reference attribute. Single address in entity",
+      "name": "filter_plus_ref_single",
+      "type": "reltio"
+    },
+    {
+      "title": "Filter+: Address as reference attribute. No postal code, only Zip5",
+      "name": "filter_plus_ref_npz",
+      "type": "reltio"
+    },
+    {
+      "title": "Filter+: Address as nested attribute. Uniq DUNS mapping and ordinary DUNS",
+      "name": "filter_plus_ud_ordinary",
+      "type": "reltio"
+    },
+    {
+      "title": "Filter+: Address as nested attribute. Uniq DUNS mapping and UNIQ DUNS",
+      "name": "filter_plus_ud_ud",
+      "type": "reltio"
+    },
+    {
+      "title": "Enrichment+: Address as nested attribute",
       "name": "enrichment_plus_nested",
       "type": "reltio"
     },
     {
-      "title": "Batch+ nested addresses",
+      "title": "Enrichment+: Address as reference attribute",
+      "name": "enrichment_plus_ref",
+      "type": "reltio"
+    },
+    {
+    "title": "Enrichment+: Address as nested attribute UNIQ duns",
+      "name": "enrichment_plus_nested_ud",
+      "type": "reltio"
+    },
+    {
+      "title": "Batch+: Address as nested attribute",
       "name": "batch_plus_nested",
       "type": "reltio"
     },
     {
-      "title": "Match+ nested addresses",
+      "title": "Batch+: Address as reference attribute",
+      "name": "batch_plus_ref",
+      "type": "reltio"
+    },
+    {
+      "title": "Batch+: Address as nested attribute UNIQ duns",
+      "name": "batch_plus_nested_ud",
+      "type": "reltio"
+    },
+    {
+      "title": "Match+:  Address as nested attribute",
       "name": "match_plus_nested",
+      "type": "reltio"
+    },
+    {
+      "title": "Match+:  Address as reference attribute",
+      "name": "match_plus_ref",
+      "type": "reltio"
+    },
+    {
+      "title": "Match+:  Address as nested attribute UNIQ duns",
+      "name": "match_plus_nested_ud",
+      "type": "reltio"
+    },
+    {
+      "title": "Monitoring:  exception event transform",
+      "name": "mon_exception",
+      "type": "reltio"
+    },
+    {
+      "title": "Family tree+:  corporate linkage upward with Address as nested attribute",
+      "name": "clu_nested",
+      "type": "reltio"
+    },
+    {
+      "title": "Family tree+:  corporate linkage upward with Address as reference attribute",
+      "name": "clu_ref",
       "type": "reltio"
     }
   ]
